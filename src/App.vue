@@ -1,8 +1,7 @@
 <template>
   <h1>ToDo App</h1>
   <form @submit.prevent="addTodo()">
-    <label>New ToDo </label>
-    <input v-model="newTodo" name="newTodo" autocomplete="off">
+    <AppInput v-model="newTodo">New ToDo</AppInput>
     <button>Add ToDo</button>
   </form>
   <h2>ToDo List</h2>
@@ -17,6 +16,7 @@
 
 <script setup>
 import { ref } from 'vue';
+import AppInput from './components/AppInput.vue';
 
 const newTodo = ref('');
 
@@ -89,12 +89,12 @@ form {
   width: 100%;
 }
 
-form label {
+/* form label {
   font-size: 14px;
   font-weight: bold;
-}
+} */
 
-form input,
+/* form input, */
 body #app form button {
   height: 48px;
   box-shadow: none;
@@ -107,11 +107,11 @@ body #app form button {
   margin-bottom: 12px;
 }
 
-form input {
+/* form input {
   background-color: transparent;
   border: 2px solid rgba(255, 255, 255, 0.35);
   color: inherit;
-}
+} */
 
 button {
   cursor: pointer;
