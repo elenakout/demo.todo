@@ -8,12 +8,6 @@
   </form>
   <h2>ToDo List</h2>
   <AppList @doneTodo="doneTodo" @removeTodo="removeTodo" :todos="todos"/>
-  <!-- <ul>
-    <li v-for="(todo, index) in todos" :key="index">
-      <span :class="{ done: todo.done }" @click="doneTodo(todo)">{{ todo.content }}</span>
-      <button @click="removeTodo(index)">Remove</button>
-    </li>
-  </ul> -->
   <h4 v-if="todos.length === 0">Empty list.</h4>
 </template>
 
@@ -82,7 +76,6 @@ h2 {
   border-bottom: 2px solid rgba(255, 255, 255, 0.35);
   padding-bottom: 6px;
 }
-
 
 h4 {
   text-align: center;

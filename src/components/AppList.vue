@@ -4,7 +4,6 @@
       <span :class="{ done: todo.done }" @click="$emit('doneTodo',todo)">{{ todo.content }}</span>
 
 			<AppButton @buttonClicked="$emit('removeTodo', index)">Remove</AppButton>
-      <!-- <button @click="removeTodo(index)">Remove</button> -->
     </li>
   </ul>
 </template>
