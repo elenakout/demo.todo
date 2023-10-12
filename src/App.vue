@@ -1,8 +1,10 @@
 <template>
   <h1>ToDo App</h1>
-  <form @submit.prevent="addTodo()">
+  <form>
     <AppInput v-model="newTodo">New ToDo</AppInput>
-    <button>Add ToDo</button>
+
+    <AppButton @buttonClicked="addTodo()">Add ToDo</AppButton>
+
   </form>
   <h2>ToDo List</h2>
   <ul>
@@ -17,6 +19,8 @@
 <script setup>
 import { ref } from 'vue';
 import AppInput from './components/AppInput.vue';
+import AppButton from './components/AppButton.vue'
+
 
 const newTodo = ref('');
 
@@ -95,7 +99,7 @@ form {
 } */
 
 /* form input, */
-body #app form button {
+/* body #app form button {
   height: 48px;
   box-shadow: none;
   outline: none;
@@ -105,7 +109,7 @@ body #app form button {
   font-size: 18px;
   margin-top: 6px;
   margin-bottom: 12px;
-}
+} */
 
 /* form input {
   background-color: transparent;
@@ -113,7 +117,7 @@ body #app form button {
   color: inherit;
 } */
 
-button {
+/* button {
   cursor: pointer;
   background-color: #a0a4d9;
   border: 1px solid #a0a4d9;
@@ -121,7 +125,7 @@ button {
   font-weight: bold;
   outline: none;
   border-radius: 6px;
-}
+} */
 
 h2 {
   font-size: 22px;
