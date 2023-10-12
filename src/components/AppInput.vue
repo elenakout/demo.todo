@@ -1,22 +1,20 @@
 <template>
-<label><slot></slot></label>
-    <input v-model="data" name="newTodo" autocomplete="off">
+  <label><slot></slot></label>
+  <input :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" name="newTodo" autocomplete="off">
 </template>
 
 <script setup>
-import { useVModel } from '@vueuse/core';
+defineProps({
+  modelValue: {
+    type: String,
+    required: true
+  }
+});
 
-const props = defineProps({
-	modelValue: {
-		type: String,
-		required:true
-	},
-})
+defineEmits(['update:modelValue']);
 
-const emit = defineEmits(['update:modelValue']);
-
-const data = useVModel(props, 'modelValue', emit);
 </script>
+
 
 <style>
 
