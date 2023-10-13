@@ -1,3 +1,7 @@
+<template>
+  <input v-model="value" />
+</template>
+
 <script setup>
 import { computed } from 'vue'
 
@@ -23,7 +27,3 @@ const value = computed({
 
 // In both cases (Vue's v-model and WinForms' data binding), changes in the UI reflect in the data, and changes in the data reflect in the UI. This is the essence of two-way binding.
 </script>
-
-<template>
-  <input v-model="value" />
-</template>
